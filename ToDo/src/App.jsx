@@ -1,6 +1,14 @@
 import { useState } from 'react'
 import './App.css'
 
+function DeleteButton() {
+  return (
+    <>
+      <button></button>
+
+    </>
+  )
+}
 
 function App() {
   const [todo, setTodo] = useState('');
@@ -21,7 +29,13 @@ function App() {
       />
       <button onClick={handleSubmit} >Eingabe</button>
       <div>
-        {todos}
+        {todos.map((todo, index) => (<>
+          <p> {todo}</p>
+          <DeleteButton />
+
+
+        </>
+        ))}
       </div>
     </>
   )
