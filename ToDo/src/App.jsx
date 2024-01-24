@@ -22,6 +22,7 @@ function App() {
   return (
     <>
 
+
       <input
         type="text"
         value={todo}
@@ -40,7 +41,4 @@ function App() {
     </>
   )
 }
-
-
-export default App
-
+export default App;
