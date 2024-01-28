@@ -45,30 +45,20 @@
 }
 
 .deleteButton {
-  background-color: #ff0000;
-  /* Red background */
+  background-color: #000000;
   border: 15em;
-  /* No border */
-  color: rgb(0, 0, 0);
-  /* White text */
+  color: rgb(255, 255, 255);
   padding: 15px 32px;
-  /* Some padding */
   text-align: center;
-  /* Centered text */
   text-decoration: none;
-  /* No underline */
   display: inline-block;
   font-size: 16px;
   margin: 4px 2px;
   cursor: pointer;
-  /* Mouse pointer changes when hovering over the button */
   transition-duration: 0.4s;
-  /* Transition effect when hovering over the button */
 }
 
 .deleteButton:hover {
-  background-color: #f44336;
-  /* Red background on hover */
-  color: white;
-  /* White text on hover */
+  background-color: #ff0000;
+  color: rgb(0, 0, 0);
 }

@@ -4,7 +4,8 @@ import './App.css'
 function DeleteButton() {
   return (
     <>
-      <button></button>
+      <button className="deleteButton">Löschen</button> onClick={handleDelete.todo}
+
 
     </>
   )
@@ -15,9 +16,10 @@ function App() {
   const [todos, setTodos] = useState([]);
 
   const handleSubmit = (event) => {
-    event.preventDefault();
-    setTodos([...todos, todo]);
+      event.preventDefault();
+      setTodos([...todos, todo]);
 
+    
   }
   return (
     <>
