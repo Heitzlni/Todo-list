@@ -14,6 +14,20 @@ function DeleteButton({ deleteFunction }) {
     </>
   );
 }
+function EditTodo({EditTodofunction}) {
+  return (
+
+    <>
+    <button
+    className='editTodo'
+    onClick={() => {
+      EditTodofunction();
+    }}>
+      Todo Editieren
+  </button>
+    </>
+  )
+}
 
 function App() {
   const [todo, setTodo] = useState('');
@@ -34,6 +48,13 @@ function App() {
         />
         <button onClick={handleSubmit}>Eingabe</button>
       </form>
+ 
+       <button
+       className='deleteButtonAll'
+       onClick={() => {
+        setTodos([]);}}>
+      Alles Löschen
+       </button>
       <div>
         {todos.map((todo, index) => (
           <div
@@ -57,6 +78,9 @@ function App() {
                 setTodos(newTodos);
               }}
             />
+            
+           
+         
           </div>
         ))}
       </div>
