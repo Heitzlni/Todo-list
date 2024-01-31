@@ -79,6 +79,14 @@ function App() {
                 setTodos(newTodos);
               }}
             />
+            <p>{todo}</p>
+            <EditTodo
+             EditTodofunction={(updatedTodo) => {
+               const newTodos = [...todos];
+               newTodos[index] = updatedTodo;
+               setTodos(newTodos);
+             }}
+/>
 
 
 
