@@ -75,10 +75,27 @@
   margin: 4px 2px;
   cursor: pointer;
   transition-duration: 0.4s;
-
 }
 
 .deleteButtonAll:hover {
   background-color: #ff0000;
   color: rgb(0, 0, 0);
+}
+
+.editTodo {
+  background-color: #00eb3b;
+  border: 15em;
+  color: rgb(255, 255, 255);
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+  transition-duration: 0.4s;
+}
+.editTodo:hover {
+  background-color: #000000;
+  color: rgb(255, 255, 255);
 }

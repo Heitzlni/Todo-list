@@ -5,7 +5,7 @@ function DeleteButton({ deleteFunction }) {
   return (
     <>
       <button
-        // className="deleteButton"
+        className="deleteButton"
         onClick={() => {
           deleteFunction();
         }}
@@ -124,7 +124,6 @@ function App() {
               <EditTodo
                 EditTodofunction={() => {
                   setEditTodo(index);
-
                   if (editTodo === index) {
                     setEditTodo(null);
                   }
