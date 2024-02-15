@@ -83,7 +83,7 @@
 }
 
 .editTodo {
-  background-color: #00eb3b;
+  background-color: #000000;
   border: 15em;
   color: rgb(255, 255, 255);
   padding: 15px 32px;
@@ -96,6 +96,6 @@
   transition-duration: 0.4s;
 }
 .editTodo:hover {
-  background-color: #000000;
-  color: rgb(255, 255, 255);
+  background-color: #0c67df;
+  color: rgb(0, 0, 0);
 }

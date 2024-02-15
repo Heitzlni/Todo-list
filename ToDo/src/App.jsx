@@ -17,6 +17,34 @@ function DeleteButton({ deleteFunction }) {
     </>
   );
 }
+function DoneButton({ doneFunction }) {
+  return (
+    <>
+      <button
+        className="doneButton"
+        onClick={() => {
+          doneFunction();
+        }}
+      >
+        <svg
+          fxmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 24 24"
+          width="24"
+          height="24"
+          fill="none"
+          stroke="currentColor"
+          strokeWidth="2"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+        >
+          <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14" />
+          <polyline points="22 4 12 14.01 9 11.01" />
+        </svg>
+      </button>
+    </>
+  );
+}
+
 function EditTodo({ EditTodofunction }) {
   return (
     <>
@@ -42,7 +70,8 @@ function EditTodo({ EditTodofunction }) {
 function App() {
   const [todo, setTodo] = useState("");
   const [todos, setTodos] = useState([]);
-
+  const [doneTodo, setDoneTodo] = useState([]);
+  const [doneTodos, setDoneTodos] = useState([]);
   const [editTodo, setEditTodo] = useState(null);
 
   const handleSubmit = (event) => {
@@ -136,4 +165,31 @@ function App() {
     </>
   );
 }
+{
+  doneTodos.map((doneTodo, index) => (
+    <div
+      style={{
+        display: "flex",
+        justifyContent: "space-between",
+        margin: "10px auto",
+        width: "60vw",
+        border: "1px solid black",
+        padding: "10px",
+        borderRadius: "5px",
+        alignItems: "center",
+        background: "#000",
+        flexDirection: "row",
+      }}
+      key={index}
+    >
+      <DoneButton
+        doneFunction={() => {
+          const newDoneTodos = [...doneTodos];
+          setDoneTodos(newDoneTodos);
+        }}
+      />
+    </div>
+  ));
+}
+
 export default App;
