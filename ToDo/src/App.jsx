@@ -70,7 +70,7 @@ function EditTodo({ EditTodofunction }) {
 function App() {
   const [todo, setTodo] = useState("");
   const [todos, setTodos] = useState([]);
-  const [doneTodo, setDoneTodo] = useState([]);
+  const [doneTodo, setDoneTodo] = useState(todo);
   const [doneTodos, setDoneTodos] = useState([]);
   const [editTodo, setEditTodo] = useState(null);
 
@@ -89,7 +89,6 @@ function App() {
         />
         <button onClick={handleSubmit}>Eingabe</button>
       </form>
-
       <button
         className="deleteButtonAll"
         onClick={() => {
@@ -158,6 +157,14 @@ function App() {
                   }
                 }}
               />
+              <DoneButton
+                doneFunction={() => {
+                  const newDoneTodos = [...doneTodos, todo];
+                  setDoneTodos(newDoneTodos);
+                  const newTodos = todos.filter((t) => t !== todo);
+                  setTodos(newTodos);
+                }}
+              />
             </div>
           </div>
         ))}
@@ -165,8 +172,9 @@ function App() {
     </>
   );
 }
-{
-  doneTodos.map((doneTodo, index) => (
+<>
+  <h2>Done Todos:</h2>
+  {doneTodos.map((doneTodo, index) => (
     <div
       style={{
         display: "flex",
@@ -182,14 +190,16 @@ function App() {
       }}
       key={index}
     >
-      <DoneButton
-        doneFunction={() => {
+      {doneTodo}
+      <DeleteButton
+        deleteFunction={() => {
           const newDoneTodos = [...doneTodos];
+          newDoneTodos.splice(index, 1);
           setDoneTodos(newDoneTodos);
         }}
       />
     </div>
-  ));
-}
-
+  ))}
+  ;
+</>;
 export default App;

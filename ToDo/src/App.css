@@ -99,3 +99,20 @@
   background-color: #0c67df;
   color: rgb(0, 0, 0);
 }
+.doneButton {
+  background-color: #000000;
+  border: 13em;
+  color: rgb(255, 255, 255);
+  padding: 12px 30px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+  transition-duration: 0.4s;
+}
+.doneButton:hover {
+  background-color: #20ad20;
+  color: rgb(0, 0, 0);
+}
