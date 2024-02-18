@@ -1,7 +1,7 @@
 import DeleteButton from "./buttons/DeleteButton";
 import DoneButton from "./buttons/DoneButton";
 
-function CheckedToDoList({ todos, setTodos, editTodo, setEditTodo }) {
+function CheckedToDoList({ todos, setTodos }) {
   const deleteTodoFunction = (index) => {
     const newTodos = [...todos];
     newTodos.splice(index, 1);
@@ -30,13 +30,12 @@ function CheckedToDoList({ todos, setTodos, editTodo, setEditTodo }) {
             background: "#000",
             flexDirection: "row",
           }}
+          key={index}
         >
           <p style={{ textDecoration: "line-through" }}>{todo.name}</p>
           <div>
-            <DeleteButton
-              deleteTodoFunction={() => deleteTodoFunction(index)}
-            />
-            <DoneButton doneTodoFunction={() => doneTodoFunction(index)} />
+            <DeleteButton deleteFunction={() => deleteTodoFunction(index)} />
+            <DoneButton doneFunction={() => doneTodoFunction(index)} />
           </div>
         </div>
       );
